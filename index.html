@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Sorting Algorithm Visualisation</title>
+
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+		<!-- Scripts to load in head -->
+		<script src="Algorithms/SelectionSort.js"></script>
+		<script src="Algorithms/BubbleSort.js"></script>
+		<script src="Algorithms/InsertionSort.js"></script>
+		<script src="Algorithms/MergeSort.js"></script>
+		<script src="Algorithms/QuickSort.js"></script>
+		<script src="Algorithms/HeapSort.js"></script>
+		<script src="Algorithms/CountingSort.js"></script>
+		<script src="Algorithms/RadixSort.js"></script>
+		<script src="Algorithms/BucketSort.js"></script>
+		<script src="Algorithm.js"></script>
+		
+	</head>
+
+	<body>
+
+		<!-- Page header -->
+		<header>
+			<h1>Select an algorithm</h1>
+			<div>
+				<ul class="algs">
+					<li class="alg" id="0"><a>Selection Sort</a></li>
+					<li class="alg" id="1"><a>Bubble Sort</a></li>
+					<li class="alg" id="2"><a>Insertion Sort</a></li>
+					<li class="alg" id="3"><a>Merge Sort</a></li>
+					<li class="alg" id="4"><a>Quick Sort</a></li>
+					<li class="alg" id="5"><a>Heap Sort</a></li>
+					<li class="alg" id="6"><a>Counting Sort</a></li>
+					<li class="alg" id="7"><a>Radix Sort</a></li>
+					<li class="alg" id="8"><a>Bucket Sort</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="ctrl">
+					<li><a>Sort</a></li>
+					<li><a>Reset</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- Visual line break -->
+		<div class="line"></div>
+
+		<!-- Canvas -->
+		<div class="content">
+			<canvas id="canvas">
+
+			</canvas>	
+		</div>
+		
+		<!-- Scripts related to html elements -->
+		<script src="Buttons.js"></script>
+		<script src="Canvas.js"></script>
+		
+	</body>
+</html>

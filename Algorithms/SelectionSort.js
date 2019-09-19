@@ -1,0 +1,12 @@
+
+class SelectionSort {
+
+	constructor() {
+
+	}
+
+	sort() {
+		
+	}
+
+}
