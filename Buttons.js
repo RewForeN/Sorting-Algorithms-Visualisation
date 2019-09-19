@@ -1,12 +1,24 @@
 
-var algButtons = document.getElementsByClassName('alg');
+let algButtons = document.getElementsByClassName('alg');
+let ctrlButtons = document.getElementsByClassName('ctrl');
 
 for (let i = 0; i < algButtons.length; i++) {
 	algButtons[i].addEventListener("click", onAlgButtonClick);
 }
 
+for (let i = 0; i < ctrlButtons.length; i++) {
+	ctrlButtons[i].addEventListener("click", onCtrlButtonClick);
+}
+
 function onAlgButtonClick(e) {
-	let id = e.path[1].id;
-	setAlgorithmById(id);
-	console.log(e);
+	setAlgorithmById(e.path[1].id);
+}
+
+function onCtrlButtonClick(e) {
+	if (e.path[1].id == 0) {
+		sort();
+	}
+	else {
+		reset();
+	}
 }

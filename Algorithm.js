@@ -1,12 +1,25 @@
 
+class Value {
+
+	constructor(val) {
+		this.val = val;
+	}
+
+}
+
+// let algorithms = [
+// 	new SelectionSort(), new BubbleSort(), new InsertionSort(), 
+// 	new MergeSort(), new QuickSort(), new HeapSort(), 
+// 	new CountingSort(), new RadixSort(), new BucketSort()
+// ]
+
 let algorithms = [
-	new SelectionSort(), new BubbleSort(), new InsertionSort(), 
-	new MergeSort(), new QuickSort(), new HeapSort(), 
-	new CountingSort(), new RadixSort(), new BucketSort()
+	SelectionSort, BubbleSort, InsertionSort, 
+	MergeSort, QuickSort, HeapSort, 
+	CountingSort, RadixSort, BucketSort
 ]
 
 let algorithm = algorithms[0];
-
 let values = []
 
 function generateValues() {
@@ -19,9 +32,13 @@ function generateValues() {
 function setAlgorithmById(id) {
 	algorithm = algorithms[id];
 	console.log(algorithm);
-	//sort();
 }
 
-function sort(values) {
-	algorithm.sort(values)
+function sort() {
+	//algorithm.sort(values)
+	algorithm.getNextMove();
+}
+
+function reset() {
+	
 }

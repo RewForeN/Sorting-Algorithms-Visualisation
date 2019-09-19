@@ -1,11 +1,7 @@
 
 class SelectionSort {
 
-	constructor() {
-
-	}
-
-	sort() {
+	static getNextMove() {
 		
 	}
 

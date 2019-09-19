@@ -7,17 +7,14 @@ var cc = canvas.getContext('2d'); // Canvas context
 
 function init() {
 	cw = window.innerWidth;
-	ch = window.innerHeight * 0.6;
+	ch = window.innerHeight * 0.7;
 	canvas.width = cw;
 	canvas.height = ch;
 }
 
-
-
 function createBar(total, cur, h) {
 	
 }
-
 
 init();
 window.onresize = init;

@@ -79,15 +79,8 @@ hr {
 	background-color: #000000;
 }
 
-.content {
+canvas {
 	position: absolute;
 	left: 0px;
-	padding: 0px;
-	width: 100%;
-	height: 80%;
-	background-color: aliceblue;
-}
-
-canvas {
-	background-color: aqua;
+	background-color: #8bc2d8;
 }
