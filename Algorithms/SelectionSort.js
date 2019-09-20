@@ -1,7 +1,9 @@
 
 class SelectionSort {
 
-	static getNextMove() {
+	static getNextMove(values) {
+		
+
 		
 	}
 

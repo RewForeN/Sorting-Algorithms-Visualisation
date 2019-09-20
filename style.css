@@ -7,6 +7,7 @@ header {
 	top: 0px;
 	left: 0px;
 	width: 100%;
+	margin: 0px;
 }
 
 h1 {
@@ -14,9 +15,9 @@ h1 {
 	margin: 5px;
 }
 
-ul {
+.algs {
+	left: 0px;
 	list-style-type: none;
-	overflow: hidden;
 	text-align: center;
 	margin: 5px;
 }
@@ -42,16 +43,20 @@ ul {
 	border-radius: 10px;
 }
 
+.ctrl {
+	list-style-type: none;
+	text-align: center;
+	margin: 5px;
+}
+
 .ctrl li {
 	display: inline-block;
-	background-color: #999999;
 	margin-top: 5px;
 }
 
 .ctrl li a {
 	font-weight: bold;
-	display: block;
-	color: black;
+	background-color: #999999;
 	padding: 14px;
 	padding-left: 30px;
 	padding-right: 30px
@@ -62,25 +67,43 @@ ul {
 	cursor: pointer;
 }
 
-hr {
-	width: 100%;
-	color: #000000;
-}
-
-.buttons {
-	text-align: center;
-}
-
 .line {
-	margin-top: 0px;
+	margin-top: 20px;
 	left: 0px;
 	width: 100%;
 	height: 2px;
 	background-color: #000000;
 }
 
-canvas {
+.content {
 	position: absolute;
 	left: 0px;
+	width: 100%;
+	height: 70%;
 	background-color: #8bc2d8;
+}
+
+.bars {
+	list-style-type: none;
+	text-align: center;
+	margin: 0px;
+}
+
+.bars li {
+	top: 0px;
+	background-color: #b768d6;
+	height: 100px;
+	width: 40px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.bars li span {
+	padding: 0;
+}
+
+li p {
+	padding-left: 10px;
+	padding-right: 10px;
 }
