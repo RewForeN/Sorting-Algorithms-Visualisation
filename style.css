@@ -90,17 +90,14 @@ h1 {
 }
 
 .bars li {
-	top: 0px;
-	background-color: #b768d6;
-	height: 100px;
 	width: 40px;
 	display: inline-block;
 	margin-left: 10px;
 	margin-right: 10px;
 }
 
-.bars li span {
-	padding: 0;
+.bars li div {
+	background-color: #b768d6;
 }
 
 li p {
