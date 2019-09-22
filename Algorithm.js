@@ -39,7 +39,7 @@ function algSort() {
 	// Schedual next iteration
 	if (index < values.length) {
 		index++;
-		setTimeout(algSort, 1);
+		setTimeout(algSort, 1000);
 	}
 	
 }
