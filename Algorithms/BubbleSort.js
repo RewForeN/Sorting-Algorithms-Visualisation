@@ -1,8 +1,10 @@
 
 class BubbleSort {
 
-	constructor() {
-		
+	static getNextMove(values, index) {
+
+
+
 	}
 
 }

@@ -1,24 +1,51 @@
 
 class SelectionSort {
 
-	static getNextMove(values, index) {
-		
-		let minIndex = index;
-		let min = parseInt(values[index], 10);
-		
-		for (let i = index; i < values.length; i++) {
+	constructor() { }
 
-			let current = parseInt(values[i], 10);
+	async sort() {
 
-			if (current < min) {
-				minIndex = i;
-				min = current;
+		for (let i = 0; i < values.length - 1; i++) {
+
+			let minIndex = i;
+			let minVal = parseInt(values[i], 10);
+
+			for (let j = i; j < values.length; j++) {
+
+				if (!isSorting) return;
+
+				checking(j, true);
+
+				let currentVal = parseInt(values[j], 10);
+				if (currentVal < minVal) {
+					minIndex = j;
+					minVal = currentVal;
+				}
+
+				await this.sleep(50);
+
+				checking(j, false);
+
 			}
-			
+
+			if (i != minIndex) {
+				this.swap(values, i, minIndex);
+				swap(i, minIndex);
+				await this.sleep(800);
+			}
+
 		}
 
-		return minIndex;
-		
+	}
+
+	swap(values, i, j) {
+		let temp = values[i];
+		values[i] = values[j];
+		values[j] = temp;
+	}
+
+	sleep(msec) {
+		return new Promise(resolve => setTimeout(resolve, msec));
 	}
 
 }
