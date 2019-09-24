@@ -1,7 +1,7 @@
 
-class SelectionSort {
+class SelectionSort extends Algorithm {
 
-	constructor() { }
+	constructor() { super() }
 
 	async sort() {
 
@@ -14,7 +14,8 @@ class SelectionSort {
 
 				if (!isSorting) return;
 
-				checking(j, true);
+				plusComparison();
+				setColor(j, color.check);
 
 				let currentVal = parseInt(values[j], 10);
 				if (currentVal < minVal) {
@@ -23,29 +24,17 @@ class SelectionSort {
 				}
 
 				await this.sleep(50);
-
-				checking(j, false);
+				setColor(j, color.normal);
 
 			}
 
 			if (i != minIndex) {
-				this.swap(values, i, minIndex);
-				swap(i, minIndex);
-				await this.sleep(800);
+				await this.swap(values, i, minIndex);
+				plusSwap();
 			}
 
 		}
 
-	}
-
-	swap(values, i, j) {
-		let temp = values[i];
-		values[i] = values[j];
-		values[j] = temp;
-	}
-
-	sleep(msec) {
-		return new Promise(resolve => setTimeout(resolve, msec));
 	}
 
 }

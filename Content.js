@@ -2,6 +2,7 @@
 const defaultNumValues = 10;
 const valueRange = 200;
 const defaultAlgorithmId = 0;
+const anim_time = 0.5;
 
 const algorithms = [
 	new SelectionSort(), new BubbleSort(), new InsertionSort(), 
@@ -9,25 +10,34 @@ const algorithms = [
 	new CountingSort(), new RadixSort(), new BucketSort()
 ]
 
+const color = {
+	normal: "#b768d6",
+	check: "#753d8b",
+}
+
 const tl = new TimelineMax();
 const ul = document.getElementsByClassName('bars')[0];
 const p_numValues = document.getElementsByClassName('numValues')[0];
+const p_numComparisons = document.getElementsByClassName('numComparisons')[0];
+const p_numSwaps = document.getElementsByClassName('numSwaps')[0];
 
 let algorithm;
 let isSorting;
 
 let numValues;
+let numComparisons;
+let numSwaps;
 let values = [];
 
 
 function init() {
-
 	isSorting = false;
 	algorithm = algorithms[defaultAlgorithmId];
 	numValues = defaultNumValues;
+	numComparisons = 0;
+	numSwaps = 0;
 	generateValues();
 	drawContent();
-
 }
 
 function generateValues() {
@@ -40,7 +50,11 @@ function generateValues() {
 
 function drawContent() {
 	p_numValues.innerHTML = numValues;
+	p_numComparisons.innerHTML = numComparisons;
+	p_numSwaps.innerHTML = numSwaps;
+	// Remove all old bars
 	while (ul.firstChild) ul.removeChild(ul.firstChild);
+	// Add new bars
 	for (let i = 0; i < values.length; i++) {
 		// Create elements
 		let item = document.createElement('li');
@@ -61,46 +75,58 @@ function setAlgorithmById(id) {
 }
 
 function reset() {
-	init();
+	isSorting = false;
+	numComparisons = 0;
+	numSwaps = 0;
+	generateValues();
+	drawContent();
+}
+
+function softReset() {
+	isSorting = false;
+	numComparisons = 0;
+	numSwaps = 0;
 }
 
 function add() {
-	isSorting = false;
 	numValues++;
-	generateValues();
-	drawContent();
+	reset();
 }
 
 function sub() {
 	if (numValues == 1) return;
-	isSorting = false;
 	numValues--;
-	generateValues();
-	drawContent();
+	reset();
 }
 
 function sort() {
 	if (isSorting) return;
 	isSorting = true;
-	algorithm.sort(values, swap, checking);
+	algorithm.sort();
 }
 
 function swap(i, j) {
 	let items = ul.children;
 	let dist = items[j].offsetLeft - items[i].offsetLeft;
-	tl.to(items[i], 0.2, { y: 40 });
-	tl.to(items[j], 0.2, { y: 40 }, "-=0.2");
-	tl.to(items[i], 0.5, { x: dist, y: 0 });
-	tl.to(items[j], 0.5, { x: -dist, y: 0 }, "-=0.5");
-	setTimeout(drawContent, 750);
+	tl.to(items[i], anim_time*0.3, { y: 40 });
+	tl.to(items[j], anim_time*0.3, { y: 40 }, "-=" + anim_time*0.3);
+	tl.to(items[i], anim_time*0.7, { x: dist, y: 0 });
+	tl.to(items[j], anim_time*0.7, { x: -dist, y: 0 }, "-=" + anim_time*0.7);
 }
 
-function checking(i, yes) {
+function setColor(i, col) {
 	let items = ul.children;
-	let color;
-	if (yes) color = "#753d8b";
-	else color = "#b768d6"
-	items[i].firstChild.style.background = color;
+	items[i].firstChild.style.background = col;
+}
+
+function plusComparison() {
+	numComparisons++;
+	p_numComparisons.innerHTML = numComparisons;
+}
+
+function plusSwap() {
+	numSwaps++;
+	p_numSwaps.innerHTML = numSwaps;
 }
 
 

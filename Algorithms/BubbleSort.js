@@ -1,10 +1,13 @@
 
-class BubbleSort {
+class BubbleSort extends Algorithm {
 
-	static getNextMove(values, index) {
+	constructor() { super() }
 
+	async sort() {
 
-
+		//swap(values, 1, 2);
+		
+		
 	}
 
 }
