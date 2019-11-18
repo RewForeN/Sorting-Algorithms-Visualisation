@@ -8,9 +8,9 @@ class Algorithm {
 		values[i] = values[j];
 		values[j] = temp;
 		swap(i, j);
-		await this.sleep(anim_time*0.9*1000);
+		let sleepTime = anim_time * 1000;
+		await this.sleep(sleepTime);
 		drawContent();
-		await this.sleep(anim_time*0.1*1000);
 	}
 
 	sleep(msec) {

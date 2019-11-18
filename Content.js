@@ -1,8 +1,9 @@
 
 const defaultNumValues = 10;
-const valueRange = 200;
+const minValue = 20;
+const maxValue = 400;
 const defaultAlgorithmId = 0;
-const anim_time = 0.5;
+const anim_time = 1;
 
 const algorithms = [
 	new SelectionSort(), new BubbleSort(), new InsertionSort(), 
@@ -10,7 +11,7 @@ const algorithms = [
 	new CountingSort(), new RadixSort(), new BucketSort()
 ]
 
-const color = {
+const colors = {
 	normal: "#b768d6",
 	check: "#753d8b",
 }
@@ -43,7 +44,7 @@ function init() {
 function generateValues() {
 	values = [];
 	for (let i = 0; i < numValues; i++) {
-		let value = Math.floor(Math.random() * valueRange) + 1;
+		let value = Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 		values.push(value);
 	}
 }
@@ -108,10 +109,12 @@ function sort() {
 function swap(i, j) {
 	let items = ul.children;
 	let dist = items[j].offsetLeft - items[i].offsetLeft;
-	tl.to(items[i], anim_time*0.3, { y: 40 });
-	tl.to(items[j], anim_time*0.3, { y: 40 }, "-=" + anim_time*0.3);
-	tl.to(items[i], anim_time*0.7, { x: dist, y: 0 });
-	tl.to(items[j], anim_time*0.7, { x: -dist, y: 0 }, "-=" + anim_time*0.7);
+	let popSect = anim_time * 0.2;
+	let moveSect = anim_time * 0.8;
+	tl.to(items[i], popSect, { y: 40 });
+	tl.to(items[j], popSect, { y: 40 }, "-=" + popSect);
+	tl.to(items[i], moveSect, { x: dist, y: 0 });
+	tl.to(items[j], moveSect, { x: -dist, y: 0 }, "-=" + moveSect);
 }
 
 function setColor(i, col) {

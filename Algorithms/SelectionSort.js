@@ -15,7 +15,7 @@ class SelectionSort extends Algorithm {
 				if (!isSorting) return;
 
 				plusComparison();
-				setColor(j, color.check);
+				setColor(j, colors.check);
 
 				let currentVal = parseInt(values[j], 10);
 				if (currentVal < minVal) {
@@ -24,7 +24,7 @@ class SelectionSort extends Algorithm {
 				}
 
 				await this.sleep(50);
-				setColor(j, color.normal);
+				setColor(j, colors.normal);
 
 			}
 
