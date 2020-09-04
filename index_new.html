@@ -18,41 +18,58 @@
 		 -->
 
 
-		<!--  -->
+		<!-- Header that contains all the sorting options -->
 		<div class="Header">
-			<!--  -->
-			<div>
-				<p>Algorithm</p>
-				<u class="Dropdown">
-					<li>Selection</li>
-					<li>Bubble</li>
-					<li>Quick</li>
-				</u>
+			<!-- Algorithm selection -->
+			<div class="HeaderItem">
+				<p>Algorithm:</p>
+				<div class="Dropdown">
+					<u>
+						<li>Selection</li>
+						<li>Bubble</li>
+						<li>Quick</li>
+					</u>
+				</div>
 			</div>
-			<div class="Seperator"></div>
-			<!--  -->
-			<div>
-				<p>Speed</p>
-				<div></div>
+			<!-- Horizontal separator -->
+			<div class="HeaderItem Seperator"></div>
+			<!-- Speed of the sorting process -->
+			<div class="HeaderItem">
+				<p>Speed:</p>
+				<div style="display: inline-flex;">
+					<p>-</p>
+					<input type="range">
+					<p>+</p>
+				</div>
 			</div>
-			<div class="Seperator"></div>
-			<!--  -->
-			<div>
-				<p>Elements</p>
-				<div></div>
+			<!-- Horizontal separator -->
+			<div class="HeaderItem Seperator"></div>
+			<!-- Number of elements to sort -->
+			<div class="HeaderItem">
+				<p>Elements:</p>
+				<div style="display: inline-flex;">
+					<p>-</p>
+					<input type="range">
+					<p>+</p>
+				</div>
 			</div>
-			<div class="Seperator"></div>
-			<!--  -->
-			<button></button>
-			<!--  -->
-			<button></button>
+			<!-- Horizontal separator -->
+			<div class="HeaderItem Seperator"></div>
+			<!-- Start/stop button -->
+			<div class="HeaderItem">
+				<p class="Button">Sort</p>
+			</div>
+			<!-- Reset button -->
+			<div class="HeaderItem">
+				<p class="Button">Reset</p>
+			</div>
 		</div>
 
-		<!--  -->
+		<!-- Horizontal line -->
 		<div class="Divider"></div>
 
-		<!--  -->
-		<div>
+		<!-- Sorting content -->
+		<div class="Content">
 
 		</div>
 

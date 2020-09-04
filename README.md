@@ -1,7 +1,3 @@
-```diff
-- This project is not finished yet.
-```
-
 # Sorting-Algorithms-Visualisation
  
 You can [see it here](https://rewforen.github.io/Sorting-Algorithms-Visualisation/) on gh-pages!
