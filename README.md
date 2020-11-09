@@ -1,6 +1,6 @@
 # Sorting-Algorithms-Visualisation
  
-You can [see it here](https://rewforen.github.io/Sorting-Algorithms-Visualisation/) on gh-pages!
+[See it here](https://rewforen.github.io/Sorting-Algorithms-Visualisation/)
 
 <br />
 
