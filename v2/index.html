@@ -12,6 +12,10 @@ Sample Sorting alg visualiser - https://clementmihailescu.github.io/Sorting-Visu
 
 		<link rel="stylesheet" type="text/css" href="Styles/style.css" />
 
+		<script src="Scripts/Algorithms/Algorithm.js"></script>
+		<script src="Scripts/Algorithms/Selection.js"></script>
+		<script src="Scripts/Algorithms/Bubble.js"></script>
+		<script src="Scripts/ListController.js"></script>
 		<script src="Scripts/script.js"></script>
 		
 	</head>
@@ -19,7 +23,7 @@ Sample Sorting alg visualiser - https://clementmihailescu.github.io/Sorting-Visu
 	<body>
 
 		<!-- Header that contains all the sorting options -->
-		<div class="header">
+		<div class="header" id="header">
 			<!-- Algorithm selection -->
 			<div class="header-item">
 				<p>Algorithm</p>
@@ -67,7 +71,7 @@ Sample Sorting alg visualiser - https://clementmihailescu.github.io/Sorting-Visu
 
 		<!-- Sorting content -->
 		<div class="content">
-			<canvas id="ctx">
+			<canvas class="content-canvas" id="ctx">
 			</canvas>
 		</div>
 

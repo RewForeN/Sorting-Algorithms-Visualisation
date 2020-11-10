@@ -3,10 +3,17 @@ let selectAlgorithm;
 let sliderSpeed, sliderElements;
 let btnDecSpeed, btnIncSpeed, btnDecElements, btnIncElements, btnSort, btnReset;
 let lblSpeed, lblElements;
+let canvas;
 
 let algorithm = 0;
 let speed = 50;
 let elements = 50;
+
+let algs = [
+	new Selection(), new Bubble()
+];
+
+let list = [];
 
 
 function setup() {
@@ -22,6 +29,7 @@ function setup() {
 	btnIncElements = document.getElementById("btnIncElements");
 	btnSort = document.getElementById("btnSort");
 	btnReset = document.getElementById("btnReset");
+	canvas = document.getElementById("ctx");
 
 	selectAlgorithm.onchange = function() {
 		algorithm = selectAlgorithm.value;
@@ -50,7 +58,12 @@ function setup() {
 	sliderElements.onchange = function() {
 		elements = sliderElements.value;
 		lblElements.innerHTML = elements;
+		ListController.generate(canvas, elements);
 	}
+
+	sliderElements.addEventListener("mousemove", function() {
+		sliderElements.onchange();
+	});
 
 	btnIncElements.onclick = function() {
 		sliderElements.stepUp();
@@ -58,12 +71,29 @@ function setup() {
 	}
 
 	btnSort.onclick = function() {
-
+		sort();
 	}
 
 	btnReset.onclick = function() {
-
+		reset();
 	}
+	
+	canvas.width = 0.98 * innerWidth;
+	canvas.height = 0.98 * innerHeight - document.getElementById("header").clientHeight - 20;
+
+	ListController.generate(canvas, elements);
+
+}
+
+function sort() {
+
+	algs[algorithm].sort();
+
+}
+
+function reset() {
+
+
 
 }
 

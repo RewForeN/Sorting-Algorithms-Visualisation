@@ -1,6 +1,10 @@
 
-class Selection extends Algorithm {
+class Selection {
 
-	
+	sort() {
+		
+		console.log("Selection");
+
+	}
 
 }

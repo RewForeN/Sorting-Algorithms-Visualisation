@@ -1,8 +1,0 @@
-
-class ListBuilder {
-
-	static test() {
-		
-	}
-
-}
