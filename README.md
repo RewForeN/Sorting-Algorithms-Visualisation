@@ -2,18 +2,5 @@
  
 [See it here](https://rewforen.github.io/Sorting-Algorithms-Visualisation/)
 
-<br />
-
 ## About
-See how some of the most well known sorting algorithms work as a list of values gets organised in a visually pleasing way.
-
-<br />
-
-## Explanation
-#### What is a sorting algorithm?
-... 
-
-<br />
-
-## To Do
-- 
+Select and compare different sorting methods by watching a list get sorted with animation! Change the sorting speed and number of elements as you desire. 
