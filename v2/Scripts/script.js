@@ -13,8 +13,6 @@ let algs = [
 	new Selection(), new Bubble()
 ];
 
-let list = [];
-
 
 function setup() {
 
@@ -79,8 +77,9 @@ function setup() {
 	}
 	
 	canvas.width = 0.98 * innerWidth;
-	canvas.height = 0.98 * innerHeight - document.getElementById("header").clientHeight - 20;
+	canvas.height = 0.98 * innerHeight - document.getElementById("header").clientHeight - 10;
 
+	ListController.newList();
 	ListController.generate(canvas, elements);
 
 }

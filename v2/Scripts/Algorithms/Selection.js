@@ -3,7 +3,7 @@ class Selection {
 
 	sort() {
 		
-		console.log("Selection");
+		console.log(ListController.list.length);
 
 	}
 
