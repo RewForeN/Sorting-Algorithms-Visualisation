@@ -86,13 +86,22 @@ function setup() {
 
 function sort() {
 
-	algs[algorithm].sort();
+	let sorted = false;
+	algs[algorithm].init();
+
+	while (!sorted) {
+		algs[algorithm].next();
+		ListController.render(canvas);
+		sorted = ListController.isSorted();
+	}
+
+	console.log("Done");
 
 }
 
 function reset() {
 
-
+	ListController.generate(canvas, elements, true);
 
 }
 

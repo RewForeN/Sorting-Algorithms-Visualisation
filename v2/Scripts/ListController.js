@@ -20,21 +20,61 @@ class ListController {
 
 	}
 
-	static generate(canvas, n) {
+	static generate(canvas, n, bypass=false) {
 
-		if (n == this.list.length || this._listCache.length == 0)
-			return;
+		if (!bypass)
+			if (n == this.list.length || this._listCache.length == 0)
+				return;
 
 		this._buildListFromCache(n);
 		this._calcListAttributes(n, canvas.width);
+
+		this.render(canvas);
+
+	}
+
+	static render(canvas) {
 
 		let ctx = canvas.getContext("2d");
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.fillStyle = "#67468f";
 
-		for (let i = 0; i < n; i++) {
-			ctx.fillRect(this._getElementPositionX(i, n, canvas.width), 0, this._elementAttributes.width, this._getElementHeight(i));
+		for (let i = 0; i < this.list.length; i++) {
+			ctx.fillRect(this._getElementPositionX(i, this.list.length, canvas.width), 0, this._elementAttributes.width, this._getElementHeight(i));
 		}
+
+	}
+
+	static getList() {
+
+		let result = [];
+		
+		for (let i = 0; i < this.list.length; i++) {
+			result.push(this.list[i]);
+		}
+
+		return result;
+
+	}
+
+	static swap(i, j) {
+
+		console.log(i + ", " + j);
+
+		let temp = this.list[i];
+		this.list[i] = this.list[j];
+		this.list[j] = temp;
+
+	}
+
+	static isSorted() {
+
+		for (let i = 1; i < this.list.length; i++) {
+			if (this.list[i] < this.list[i-1])
+				return false;
+		}
+
+		return true;
 
 	}
 
