@@ -15,7 +15,7 @@ class ListController {
 		this._listCache = [];
 
 		for (let i = 0; i < 100; i++) {
-			this._listCache.push(Math.floor(Math.random() * 100) + 1);
+			this._listCache.push(Math.random() * 100 + 1);
 		}
 
 	}
