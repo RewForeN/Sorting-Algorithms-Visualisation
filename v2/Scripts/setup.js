@@ -28,9 +28,15 @@ function setupListeners() {
 	}
 
 	sliderSpeed.onchange = function() {
+		if (speed == sliderSpeed.value) return;
 		speed = sliderSpeed.value;
-		lblSpeed.innerHTML = speed;
+		lblSpeed.innerHTML = speed/50;
+		console.log("New speed: " + speed);
 	}
+
+	sliderSpeed.addEventListener("mousemove", function() {
+		sliderSpeed.onchange();
+	});
 
 	btnIncSpeed.onclick = function() {
 		sliderSpeed.stepUp();
@@ -79,5 +85,7 @@ function setup() {
 
 	renderer = new ListRenderer(canvas);
 	list = new CachedList(numElements);
+
+	renderer.render(list);
 
 }

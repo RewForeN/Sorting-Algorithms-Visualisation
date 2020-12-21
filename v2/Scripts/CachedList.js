@@ -8,6 +8,7 @@ class CachedList {
 
 		this.cache = new Array(numElements);
 		this.elements = new Array(numElements);
+		
 		this.newRandomList();
 
 	}

@@ -1,9 +1,11 @@
 
 class Selection {
 
-	constructor() {
+	begin() {
 
-		this.index = 0;
+		this.base = 0;
+		this.compare = 1;
+		this.min = 0;
 
 	}
 
@@ -13,29 +15,24 @@ class Selection {
 	 * @param {array} list - The list for which to complete the next sorting step.
 	 * @returns {boolean} - True if the list is completely sorted.
 	 */
-	next(list) {
+	next() {
 
-		let min = this.index;
+		if (list.get(this.compare) < list.get(this.min)) {
+			this.min = this.compare;
+		}
 
-		for (let i = this.index + 1; i < list.getLength(); i++) {
-			if (list.get(i) < list.get(min)) {
-				min = i;
+		this.compare++;
+
+		if (this.compare == list.getLength()) {
+			if (this.min != this.base) {
+				list.swap(this.base, this.min);
 			}
+			this.base++;
+			this.compare = this.base + 1;
+			this.min = this.base;
 		}
-
-		if (min != this.index) {
-			list.swap(this.index, min);
-		}
-
-		this.index++;
-
-		return (this.index == list.getLength() - 1) ? true : false;
-
-	}
-
-	reset() {
 		
-		this.index = 0;
+		return (this.base == list.getLength() - 1) ? true : false;
 
 	}
 

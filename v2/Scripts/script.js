@@ -1,13 +1,11 @@
 
-let selectAlgorithm,
-	sliderSpeed, sliderElements,
+let selectAlgorithm, sliderSpeed, sliderElements,
 	btnDecSpeed, btnIncSpeed, btnDecElements, btnIncElements, btnSort, btnReset,
-	lblSpeed, lblElements,
-	canvas;
+	lblSpeed, lblElements, canvas;
 
+let algorithm = 0;
 let speed = 50;
 let numElements = 50;
-let algorithm = 0;
 let isSorting = false;
 
 let algs = [
@@ -23,15 +21,20 @@ let list;
  */
 async function sort() {
 
+	selectAlgorithm.disabled = true;
+	sliderSpeed.disabled = true;
+	sliderElements.disabled = true;
 	btnSort.disabled = true;
+
+	algs[algorithm].begin();
 
 	isSorting = true;
 	let isSorted = false;
 
 	while (!isSorted && isSorting) {
-		isSorted = algs[algorithm].next(list);
+		isSorted = algs[algorithm].next();
 		renderer.render(list);
-		await sleep(100);
+		await sleep(10);
 	}
 
 	isSorting = false;
@@ -45,9 +48,14 @@ function reset() {
 
 	isSorting = false;
 	
-	algs[algorithm].reset();
+	//algs[algorithm].reset();
 	list.reset();
 	renderer.render(list);
+
+	selectAlgorithm.disabled = false;
+	sliderSpeed.disabled = false;
+	sliderElements.disabled = false;
+	btnSort.disabled = false;
 
 }
 
@@ -59,5 +67,4 @@ function sleep(ms) {
 // When the window loads setup 
 window.onload = function() {
 	setup();
-	renderer.render(list);
 }
