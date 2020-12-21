@@ -32,7 +32,7 @@ class Selection {
 			this.min = this.base;
 		}
 		
-		return (this.base == list.getLength() - 1) ? true : false;
+		return (this.base == list.getLength() - 1);
 
 	}
 

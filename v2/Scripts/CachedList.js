@@ -25,6 +25,12 @@ class CachedList {
 
 	}
 
+	set(i, value) {
+
+		this.elements[i] = value;
+
+	}
+
 	/**
 	 * Generates new random values for the list.
 	 * The list will stay the same length.

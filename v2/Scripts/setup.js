@@ -30,7 +30,7 @@ function setupListeners() {
 	sliderSpeed.onchange = function() {
 		if (speed == sliderSpeed.value) return;
 		speed = sliderSpeed.value;
-		lblSpeed.innerHTML = speed/50;
+		lblSpeed.innerHTML = speed/10;
 		console.log("New speed: " + speed);
 	}
 

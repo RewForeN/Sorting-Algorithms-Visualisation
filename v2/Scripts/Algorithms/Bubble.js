@@ -27,7 +27,7 @@ class Bubble {
 			this.last--;
 		}
 
-		return (this.last == 0) ? true : false;
+		return (this.last == 0);
 
 	}
 

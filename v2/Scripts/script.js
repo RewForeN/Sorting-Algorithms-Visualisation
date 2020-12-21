@@ -9,7 +9,7 @@ let numElements = 50;
 let isSorting = false;
 
 let algs = [
-	new Selection(), new Bubble()
+	new Selection(), new Bubble(), new Insertion()
 ];
 
 let renderer;
@@ -22,7 +22,6 @@ let list;
 async function sort() {
 
 	selectAlgorithm.disabled = true;
-	sliderSpeed.disabled = true;
 	sliderElements.disabled = true;
 	btnSort.disabled = true;
 
@@ -34,8 +33,10 @@ async function sort() {
 	while (!isSorted && isSorting) {
 		isSorted = algs[algorithm].next();
 		renderer.render(list);
-		await sleep(10);
+		await sleep(21-speed);
 	}
+
+	console.log("DONE");
 
 	isSorting = false;
 	
@@ -48,12 +49,10 @@ function reset() {
 
 	isSorting = false;
 	
-	//algs[algorithm].reset();
 	list.reset();
 	renderer.render(list);
 
 	selectAlgorithm.disabled = false;
-	sliderSpeed.disabled = false;
 	sliderElements.disabled = false;
 	btnSort.disabled = false;
 
