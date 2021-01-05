@@ -32,7 +32,7 @@ async function sort() {
 
 	while (!isSorted && isSorting) {
 		isSorted = algs[algorithm].next();
-		renderer.render(list);
+		renderer.render();
 		await sleep(21-speed);
 	}
 
@@ -50,7 +50,7 @@ function reset() {
 	isSorting = false;
 	
 	list.reset();
-	renderer.render(list);
+	renderer.render();
 
 	selectAlgorithm.disabled = false;
 	sliderElements.disabled = false;

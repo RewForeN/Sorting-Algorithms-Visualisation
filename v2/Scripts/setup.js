@@ -73,6 +73,13 @@ function setupListeners() {
 		reset();
 	}
 
+	window.onresize = function() {
+		canvas.width = 0.98 * innerWidth;
+		canvas.height = 0.98 * innerHeight - document.getElementById("header").clientHeight - 10;
+		renderer.calculateListAttributes();
+		renderer.render();
+	}
+
 }
 
 function setup() {
@@ -86,6 +93,6 @@ function setup() {
 	renderer = new ListRenderer(canvas);
 	list = new CachedList(numElements);
 
-	renderer.render(list);
+	renderer.render();
 
 }

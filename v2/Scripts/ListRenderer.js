@@ -24,9 +24,9 @@ class ListRenderer {
 	 * 
 	 * @param {array} list A.
 	 */
-	render(list) {
+	render() {
 
-		this._calculateListAttributes(list);
+		this.calculateListAttributes();
 
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 		
@@ -55,7 +55,7 @@ class ListRenderer {
 	 * 
 	 * @param {array} list A.
 	 */
-	_calculateListAttributes(list) {
+	calculateListAttributes() {
 
 		let r = this.canvas.width / list.getLength();
 		this.elementWidth = 0.63 * r;
